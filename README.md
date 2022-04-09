@@ -99,5 +99,31 @@ I ll expalin the drawback of tradition search engine by using an example in the 
 
 ![Higle-level Architecture](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/high-level-weaviate.png)
 
+Refer [this](https://weaviate.io/developers/weaviate/current/architecture/index.html) for more details regarding the architecture.
+
+I ll walk through the weaviate modules which enables additional functionalities to the vector native database.
+
+### Modules
+
+Weaviate is completely modularized. The functionality of the vector native databse can be enhanced by these modules. There are mainly two types of modules.
+1. Dense Retrievers  - These modules vectorize the data which meand transform the data into vectors. (ex: text2vec-contextionary, text2vec-transformers, text2vec-openai, multi2vec-clip )
+2. Reader or Generator modules - These modules add additional functionality. (ex : quetion answering module, text summarization module). A Reader module takes the set of relevant documents that are retrieved by the Retriever module, and extracts a piece of relevant information per document.  A Generator module would, on the other hand, use language generation to generate an answer from the given document
+
+Additionaly weaviate allows developers to create custome modules.
+
+Typically a (vectorizer) module consists of two parts:
+
+![modules-core]()
+
+1. Module code for Weaviate, written in Go, which hooks  into specific lifecycles and provides various capabilities (like controlling the API function) to integrate the module into the regular flow in Weaviate.
+
+    - Tells the Weaviate GraphQL API that the module provides a specific nearText method.
+    - Validates specific configuration and schema settings and makes them available to the APIs.
+    - Tells Weaviate how to obtain a vector (e.g. a word or image embedding) when one is necessary (by sending an HTTP request to a third-party service, in this case the Python application around the inference model)
+
+2. Inference service, typically a containerized application that wraps an ML model with a module-specific API which is consumed by the module code executed in Weaviate.
+    - Provides a service that can do model inference.
+    - Implements an API that is in contract with A (not with Weaviate itself).
+
 
 
