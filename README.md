@@ -7,9 +7,9 @@ Before dive into the neural search engines, will look in to regular **keyword-ba
 The most straight forward way of searching is keyword-based searching. What it does is matching the query with the keywords which we have and output the results. But this approach is brital as there are multiple way of describing the same thing. Other drawback of this approach is the **polysemy** which means that the same word can mean multiple things.
 Back in 2015 tech giant Google launched **RankBrain** which combines AI to bring a revolution in keyword-based search. Before RankBrain process was something like this.
 
-[Before RankBrain](https://api.backlinko.com/app/uploads/2017/11/1_2_google-engineers-960x683.webp)
+![Before RankBrain](https://api.backlinko.com/app/uploads/2017/11/1_2_google-engineers-960x683.webp)
 
-[After Rankbrain](https://api.backlinko.com/app/uploads/2017/11/1_3_rankbrain-process-960x363.webp)
+![After Rankbrain](https://api.backlinko.com/app/uploads/2017/11/1_3_rankbrain-process-960x363.webp)
 
 So what RankBrain does,
 Depend on the keyword RankBrain will increase or decrease the importance of backlinks, content refreshes, domain authority etc.
