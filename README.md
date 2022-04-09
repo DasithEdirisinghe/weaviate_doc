@@ -97,7 +97,7 @@ I ll expalin the drawback of tradition search engine by using an example in the 
  
  ### Weaviate high level Architecture
 
-![Higle-level Architecture]()
+![Higle-level Architecture](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/high-level.png)
 
 
 
