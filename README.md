@@ -95,8 +95,9 @@ I ll expalin the drawback of tradition search engine by using an example in the 
  ![vector space](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/vectorSpace.png)
 
  
- - Weaviate uses pretrained text2vec model to vectorize the data (ex: fasttext)
+ ### Weaviate high level Architecture
 
+![Higle-level Architecture]()
 
 
 
