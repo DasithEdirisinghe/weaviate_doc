@@ -194,7 +194,7 @@ Typically a (vectorizer) module consists of two parts:
 }
 ```
 
-- Additional properties which have applied for the design are based on the result which outputs from the inference model. Here [BERT-NER](https://huggingface.co/dslim/bert-base-NER) has used. This model returns a result as below.
+- Additional properties which have applied for the design are based on the result which outputs from the inference model. Here [BERT-NER](https://huggingface.co/dslim/bert-base-NER) has used as the inference model. This model returns a result as below.
 ``` javascript
 [
   {
