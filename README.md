@@ -26,7 +26,7 @@ So what RankBrain does,
 - Depend on the keyword RankBrain will increase or decrease the importance of backlinks, content refreshes, domain authority etc.
 - Then, it looks at how Google searchers interact with the new search results. If users like the new algorithm better, it stays. If not, RankBrain rolls back the old algorithm.
 
-But since data becoming growing exponentially and people wanted to search through voice, images, vedios and interact with voice assistance like siri, cortana, and alexa, engineers wanted to apply AI and Deep Learning techniques in order to achieve these use cases. Thats where the neural search comes in to the picture.
+But since data becoming growing exponentially and people wanted to search through voice, images, videos and interact with voice assistance like siri, cortana, and alexa, engineers wanted to apply AI and Deep Learning techniques in order to achieve these use cases. Thats where the neural search comes in to the picture.
 
 ## What is Neural Search
 
