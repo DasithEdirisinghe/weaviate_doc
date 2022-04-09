@@ -272,4 +272,6 @@ which related to the result from the inference model.
 
 ![usecase](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/weaviate-usecase.png)
 
+Hope now you have a high level idea about neural search engines and weaviate. Continue on reading more article related to these technologies.
+
 
