@@ -32,7 +32,7 @@ But since data becoming growing exponentially and people wanted to search throug
 
 ## What is Neural Search
 
-Neural Search is a new approach to retrieving information using neural networks. It uses advance techniques to make the search more accurate and scalable.
+Neural Search is a new approach to retrieving information using neural networks. It uses advance techniques as below to make the search more accurate and scalable.
 - Use of word embeddings to capture semantic properties of words
 - Focus on end-to-end learning of higher-level tasks (e.g., question answering, text summarization)
 
