@@ -1,6 +1,6 @@
 
-## Weaviate
-An Open Source Neural Search Engine & A Vector DataBase
+# Weaviate
+### An Open Source Neural Search Engine & A Vector Database
 
 ![Weaviate](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/weaviate-cover.png)
 
