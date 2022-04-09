@@ -106,10 +106,125 @@ I ll walk through the weaviate modules which enables additional functionalities 
 ### Modules
 
 Weaviate is completely modularized. The functionality of the vector native databse can be enhanced by these modules. There are mainly two types of modules.
-1. Dense Retrievers  - These modules vectorize the data which meand transform the data into vectors. (ex: text2vec-contextionary, text2vec-transformers, text2vec-openai, multi2vec-clip )
-2. Reader or Generator modules - These modules add additional functionality. (ex : quetion answering module, text summarization module). A Reader module takes the set of relevant documents that are retrieved by the Retriever module, and extracts a piece of relevant information per document.  A Generator module would, on the other hand, use language generation to generate an answer from the given document
+1. Dense Retrievers  - These modules vectorize the data which means transform the data into vectors. (ex: text2vec-contextionary, text2vec-transformers, text2vec-openai, multi2vec-clip )
+2. Reader or Generator modules - These modules add additional functionality. (ex : question answering module, text summarization module). A Reader module takes the set of relevant documents that are retrieved by the Retriever module, and extracts a piece of relevant information per document.  A Generator module would, on the other hand, use language generation to generate an answer from the given document
 
-Additionaly weaviate allows developers to create custome modules.
+### Creating custome modules
+
+- Additionaly weaviate allows developers to create custome modules. 
+- If the developer comfortable with the design of the module he can start on creating the module.
+- In order to design a proper module schema developer should have a idea about the inference model that he use and accordingly have to add additional arguments.
+
+- Example Design related to Token classification module
+
+```json
+{
+  Get {
+    Article {
+      summary
+      _additional {
+	tokens (
+	  properties: ["summary"],
+          limit: 2
+          certainty: 0.7
+	) {
+          property
+          entity
+          certainty
+          word
+          startPosition   
+          endPosition   
+        }
+      }
+    }
+  }
+}
+```
+- Result will look like below
+
+```json
+{
+    "data": {
+        "Get": {
+            "Article": [
+                {
+                    "summary": "Shuttered cinemas led them to frantically sell their films to streamers, who were all too ready with outstretched arms and wide-open chequebooks to help bolster their booming business. Watching the splashy animated adventure The Mitchells vs the Machines on Netflix just weeks after Godzilla vs Kong jumpstarted the global box office, one can imagine that some wound-licking might soon be taking place over at Sony, where it was originally envisioned as a big-budget tentpole before being offloaded during the pandemic. It also carries with it a considerable budget, a big bet that belongs on the big screen, instead of launching online after a token one week theatrical window. Sony might be kicking themselves in the immediate future but the millions who will get to see the film on Netflix and the enthusiasm that will surely follow is a sign that its animation arm is doing something special. In the ongoing studios v streamers war, we can call this one a tie.",
+                    "_additional": {
+                        "tokens": [
+                          {
+                              "property": "summary",
+                              "entity": "MISC",
+                              "certainty": 0.9894614815711975,
+                              "word": "The Mitchells vs the Machines",
+                              "startPosition": 225,
+                              "endPosition": 254
+                          },
+                          {
+                              "property": "summary",
+                              "entity": "ORG",
+                              "certainty": 0.7529033422470093,
+                              "word": "Netflix",
+                              "startPosition": 258,
+                              "endPosition": 265
+                          }
+                      ]
+                  }
+                }
+            ]
+        }
+    }
+}
+```
+
+- Additional properties which have applied for the design are based on the result which outputs from the inference model. Here [BERT-NER](https://huggingface.co/dslim/bert-base-NER) has used. This model returns a result as below.
+``` javascript
+[
+  {
+    "entity_group": "PER",
+    "score": 0.9964176416397095,
+    "word": "Clara",
+    "start": 11,
+    "end": 16
+  },
+  {
+    "entity_group": "LOC",
+    "score": 0.9961979985237122,
+    "word": "Berkeley",
+    "start": 31,
+    "end": 39
+  },
+  {
+    "entity_group": "LOC",
+    "score": 0.9990196228027344,
+    "word": "California",
+    "start": 41,
+    "end": 51
+  }
+]
+```
+- Hope this make sense with the design. In the design inside additional property we can see 5 extra arguments as below.
+```javascript
+{
+          entity
+          certainty
+          word
+          start
+          end
+        }
+```
+which related to the result from the inference model.
+```json
+{
+    "entity_group": "PER",
+    "score": 0.9985478520393372, // certainty
+    "word": "Sarah",
+    "start": 11,
+    "end": 16
+  }
+```
+
+[GitHub](https://github.com/semi-technologies/weaviate) 
+[Custome Module](https://weaviate.io/developers/contributor-guide/current/weaviate-module-system/how-to-build-a-new-module.html)
 
 Typically a (vectorizer) module consists of two parts:
 
