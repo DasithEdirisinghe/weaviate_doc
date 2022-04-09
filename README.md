@@ -7,9 +7,10 @@
 <br>
 In today’s digitalized world, search engines have become one of the most powerful tools on the internet and an essential part of our daily lives. By consolidating and organizing the wealth of information available online, search engines like Google, Yahoo, or Bing help billions of online users find the content they need at a rapid pace. Almost 30 percent of global web traffic is generated via online search usage, showing the vital role these platforms play in directing and navigating user flows to different websites. As search engines rank search results in order of relevancy, meaning that the most valuable links for users’ queries are displayed prominently on the results page, high rankings have become one of the top digital priorities for companies worldwide.
 
+
 <br>
 
-So what are we going to talk today?
+Summary for todays article
 - What is keyword-based searching 
 - What is Neural Searching
 - Intro to Weaviate; Vector Search Engine
