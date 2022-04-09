@@ -81,6 +81,8 @@ I ll expalin the drawback of tradition search engine by using an example in the 
  - Stores in a high dimensional vector space where
  - This captures the semantics and relationships
 
+ ![vector space](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/vectorSpace.png)
+
 
 
 
