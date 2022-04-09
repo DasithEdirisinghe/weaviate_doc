@@ -95,9 +95,9 @@ I ll expalin the drawback of tradition search engine by using an example in the 
  ![vector space](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/vectorSpace.png)
 
  
- ### Weaviate high level Architecture
+ ### High level Architecture of Weaviate
 
-![Higle-level Architecture](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/high-level.png)
+![Higle-level Architecture](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/high-level-weaviate.png)
 
 
 
