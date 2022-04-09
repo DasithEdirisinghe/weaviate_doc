@@ -117,7 +117,7 @@ Weaviate is completely modularized. The functionality of the vector native datab
 
 - Example Design related to Token classification module
 
-```json
+```javascript
 {
   Get {
     Article {
