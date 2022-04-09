@@ -131,7 +131,7 @@ Typically a (vectorizer) module consists of two parts:
 
 - Additionaly weaviate allows developers to create custome modules. 
 - If the developer comfortable with the design of the module he can start on creating the module.
-- In order to design a proper module schema developer should have a idea about the inference model that he use and accordingly have to add additional arguments.
+- In order to design a proper module schema developer should have an idea about the inference model that he use and accordingly have to add additional arguments.
 
 - Example Design related to Token classification module
 
