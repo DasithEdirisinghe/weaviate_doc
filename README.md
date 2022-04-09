@@ -24,7 +24,7 @@ The most straight forward way of searching is keyword-based searching. What it d
 
 Back in 2015 tech giant Google launched **RankBrain** which combines AI to bring a revolution in keyword-based search. 
 
-#### Before RankBrain process was something like this.
+#### Before RankBrain, process was something like this.
 <br>
 
 ![Before RankBrain](https://api.backlinko.com/app/uploads/2017/11/1_2_google-engineers-960x683.webp)
@@ -37,7 +37,7 @@ Back in 2015 tech giant Google launched **RankBrain** which combines AI to bring
 ![After Rankbrain](https://api.backlinko.com/app/uploads/2017/11/1_3_rankbrain-process-960x363.webp)
 
 So what RankBrain does,
-- Depend on the keyword RankBrain will increase or decrease the importance of backlinks, content refreshes, domain authority etc.
+- Depend on the keyword, RankBrain will increase or decrease the importance of backlinks, content refreshes, domain authority etc.
 - Then, it looks at how Google searchers interact with the new search results. If users like the new algorithm better, it stays. If not, RankBrain rolls back the old algorithm.
 
 But since data becoming growing exponentially and people wanted to search through voice, images, videos and interact with voice assistance like siri, cortana, and alexa, engineers wanted to apply AI and Deep Learning techniques in order to achieve these use cases. Thats where the neural search comes in to the picture.
@@ -72,13 +72,13 @@ Typical Process of a neural search engine
 
 How Weaviate comes into the picture?
 
-### Weaviate
+## Weaviate
 
 Weaviate is a vector search engine and vector database. Weaviate uses machine learning to vectorize and store data, and to find answers to natural language queries. With Weaviate you can also bring your custom ML models to production scale. 
 
 Additionally Weaviate is a low-latency vector search engine with out-of-the-box support for different media types (text, images, etc.). It offers Semantic Search, Question-Answer Extraction, Classification, Customizable Models (PyTorch/TensorFlow/Keras), and more. Built from scratch in Go, Weaviate stores both objects and vectors, allowing for combining vector search with structured filtering and the fault-tolerance of a cloud-native database, all accessible through GraphQL, REST, and various programming language clients. (Intro from the [documentation](https://weaviate.io/developers/weaviate/current/))
 
-- 80% of the data are unstructured and hence it is difficult to search and classify data. So adding context and meaning to the data is important. Weaviate focuses on this issue and build a production grade, cloud native, AI based sementic search engine (or vector search engine | neural search engine). 
+- 80% of the data are unstructured. Hence it is difficult to search and classify data. So adding context and meaning to the data is important. Weaviate focuses on this issue and build a production grade, cloud native, AI based sementic search engine (or vector search engine | neural search engine). 
 
 ![weaviate](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/weaviate.png)
 
@@ -89,7 +89,7 @@ I ll expalin the drawback of the tradition search engine by using an example in 
  { "data": "The Eiffel Tower is a wrought iron lattice tower on the Champ de Mars in Paris." }
  ```
  
- Storing this in a traditional search engine might leverage inverted indices to index the data. This means that to retrieve the data; you need to search for “Eiffel Tower” or “wrought iron lattice”, etc. to find it. But what if you have vast amounts of data and you want the document about the Eiffel Tower but you search for: “landmarks in France”? Traditional search engines can’t help you there and this is where vector search engines show their superiority.
+ Storing this data in a traditional search engine might leverage inverted indices to index the data. This means that to retrieve the data; you need to search for “Eiffel Tower” or “wrought iron lattice”, etc. to find it. But what if you have vast amounts of data and you want the document about the Eiffel Tower but you search for: “landmarks in France”? Traditional search engines can’t help you there and this is where vector search engines show their superiority.
 
  Weaviate uses vector indexing mechanisms at its core to represent the data. The vectorization modules (e.g., the NLP module) vectorizes the  data object in a vector-space where the data object sits near the search query. This means that Weaviate can’t make a 100% match, but a very high one to show you the results.
 
@@ -128,7 +128,7 @@ I ll walk through the weaviate modules which enables additional functionalities 
 ### Modules
 
 Weaviate is completely modularized. The functionality of the vector native databse can be enhanced by these modules. There are mainly two types of modules.
-1. Dense Retrievers  - These modules vectorize the data which means transform the data into vectors. (ex: text2vec-contextionary, text2vec-transformers, text2vec-openai, multi2vec-clip )
+1. Dense Retrievers  - These modules vectorize the data. Which means transform the data into vectors. (ex: text2vec-contextionary, text2vec-transformers, text2vec-openai, multi2vec-clip )
 2. Reader or Generator modules - These modules add additional functionality. (ex : question answering module, text summarization module). A Reader module takes the set of relevant documents that are retrieved by the Retriever module, and extracts a piece of relevant information per document.  A Generator module would, on the other hand, use language generation to generate an answer from the given document
 
 
@@ -146,13 +146,13 @@ Typically a (vectorizer) module consists of two parts:
     - Provides a service that can do model inference.
     - Implements an API that is in contract with A (not with Weaviate itself).
 
-### Creating a custome module
+### Creating a custom module
 
-- Additionaly weaviate allows developers to create custome modules. 
-- If the developer comfortable with golang and vector seach engines and with the design of the module, he can start on creating the module.
-- In order to design a proper module schema developer should have an idea about the inference model that he use and accordingly have to add additional arguments to the module design.
+- Additionaly weaviate allows developers to create custom modules. 
+- If the developer comfortable with golang, vector seach engines and with the design of the module, he can start on creating the module.
+- In order to design a proper module schema, developer should have an idea about the inference model that he would use and accordingly have to add additional arguments to the module design.
 
-- Example Design related to Token classification module
+- Example design related to Token classification module
 
 ```javascript
 {
@@ -213,7 +213,7 @@ Typically a (vectorizer) module consists of two parts:
 }
 ```
 
-- Additional properties which have applied for the design are based on the result which outputs from the inference model. Here [BERT-NER](https://huggingface.co/dslim/bert-base-NER) has used as the inference model. This model returns a result as below.
+- Additional properties which have applied for the module design are based on the result which outputs from the inference model. Here [BERT-NER](https://huggingface.co/dslim/bert-base-NER) has used as the inference model. This model returns a result as below.
 ``` javascript
 [
   {
@@ -239,7 +239,7 @@ Typically a (vectorizer) module consists of two parts:
   }
 ]
 ```
-- Hope this make sense with the design. In the design inside additional property we can see 5 extra arguments as below.
+- Hope this make sense with the design. In the design, inside additional property we can see 5 extra arguments as below.
 ```javascript
 {
           entity
@@ -274,4 +274,9 @@ which related to the result from the inference model.
 
 Hope now you have a high level idea about neural search engines and weaviate. Continue on reading more article related to these technologies.
 
+References:
+- https://weaviate.io/developers/weaviate/current/
+- https://dzone.com/articles/what-is-neural-search
+- https://analyticsindiamag.com/neural-nets-transforming-the-world-of-search-engines/
 
+- https://huggingface.co/
