@@ -79,9 +79,18 @@ I ll expalin the drawback of tradition search engine by using an example in the 
  - It also called word embedding, vector mapping, feature learning
  - Maps the data to vectors of real number.
  - Stores in a high dimensional vector space where
- - This captures the semantics and relationships
+ - This captures the semantics and relationships between data
+ - Data is automatically stored with its meaning
+ - Enables automatic classification
+
+ Vector Space
+
+ - each data object has a corresponding vector and posistion in the vector space.
+ - Here data has represented in a 300 long array. That means vector space is 300 dimensional.
 
  ![vector space](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/vectorSpace.png)
+
+ Weaviate uses pretrained text2vec model to vectorize the data
 
 
 
