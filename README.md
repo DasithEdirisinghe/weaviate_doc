@@ -5,11 +5,21 @@
 ![Weaviate](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/weaviate-cover.png)
 
 <br>
+In today’s digitalized world, search engines have become one of the most powerful tools on the internet and an essential part of our daily lives. By consolidating and organizing the wealth of information available online, search engines like Google, Yahoo, or Bing help billions of online users find the content they need at a rapid pace. Almost 30 percent of global web traffic is generated via online search usage, showing the vital role these platforms play in directing and navigating user flows to different websites. As search engines rank search results in order of relevancy, meaning that the most valuable links for users’ queries are displayed prominently on the results page, high rankings have become one of the top digital priorities for companies worldwide.
 
-Before dive into the neural search engines, will look in to regular **keyword-based searching**
+<br>
+
+So what are we going to talk today?
+- What is keyword-based searching 
+- What is Neural Searching
+- Intro to Weaviate; Vector Search Engine
+- Weaviate architecture
+- Weavite Modules and Custome Modules
+
 ## What is a Keyword-based searching
 
-The most straight forward way of searching is keyword-based searching. What it does is matching the query with the keywords which we have and output the results. But this approach is brital as there are multiple way of describing the same thing. Other drawback of this approach is the **polysemy** which means that the same word can mean multiple things.
+The most straight forward way of searching is keyword-based searching. What it does is matching the query with the keywords which already have and output the best result. But this approach is fragile as there are multiple way of describing the same data object. Other drawback of this approach is the **polysemy** which means that the same word can mean multiple things.
+
 Back in 2015 tech giant Google launched **RankBrain** which combines AI to bring a revolution in keyword-based search. 
 
 #### Before RankBrain process was something like this.
