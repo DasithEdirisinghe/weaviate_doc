@@ -62,11 +62,25 @@ How Weaviate comes into the picture?
 
 Weaviate is a vector search engine and vector database. Weaviate uses machine learning to vectorize and store data, and to find answers to natural language queries. With Weaviate you can also bring your custom ML models to production scale. (Intro from the [documentation](https://weaviate.io/developers/weaviate/current/))
 
-- 80% of the data are unstructured and hence dificult to search and clasify data. So adding context and meaning to the data is important. Weaviate focus on this issue and build a production grade, cloud native, AI based sementic search engine (or vector search engine | neural search engine). 
+- 80% of the data are unstructured and hence it is difficult to search and classify data. So adding context and meaning to the data is important. Weaviate focuses on this issue and build a production grade, cloud native, AI based sementic search engine (or vector search engine | neural search engine). 
 
 ![weaviate](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/weaviate.png)
 
-Weaviate uses vector indexing mechanisms at its core to represent the data. The vectorization modules (e.g., the NLP module) vectorizes the  data object in a vector-space where the data object sits near the search query. This means that Weaviate can’t make a 100% match, but a very high one to show you the results.
+
+I ll expalin the drawback of tradition search engine by using an example in the documentation.
+ - data object: { "data": "The Eiffel Tower is a wrought iron lattice tower on the Champ de Mars in Paris." }
+ 
+ Storing this in a traditional search engine might leverage inverted indices to index the data. This means that to retrieve the data; you need to search for “Eiffel Tower” or “wrought iron lattice”, etc. to find it. But what if you have vast amounts of data and you want the document about the Eiffel Tower but you search for: “landmarks in France”? Traditional search engines can’t help you there and this is where vector search engines show their superiority.
+
+ Weaviate uses vector indexing mechanisms at its core to represent the data. The vectorization modules (e.g., the NLP module) vectorizes the  data object in a vector-space where the data object sits near the search query. This means that Weaviate can’t make a 100% match, but a very high one to show you the results.
+
+ So what is vectorization?
+
+ - It also called word embedding, vector mapping, feature learning
+ - Maps the data to vectors of real number.
+ - Stores in a high dimensional vector space where
+ - This captures the semantics and relationships
+
 
 
 
