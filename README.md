@@ -109,7 +109,22 @@ Weaviate is completely modularized. The functionality of the vector native datab
 1. Dense Retrievers  - These modules vectorize the data which means transform the data into vectors. (ex: text2vec-contextionary, text2vec-transformers, text2vec-openai, multi2vec-clip )
 2. Reader or Generator modules - These modules add additional functionality. (ex : question answering module, text summarization module). A Reader module takes the set of relevant documents that are retrieved by the Retriever module, and extracts a piece of relevant information per document.  A Generator module would, on the other hand, use language generation to generate an answer from the given document
 
-### Creating custome modules
+
+Typically a (vectorizer) module consists of two parts:
+
+![modules-core](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/modules-core.png)
+
+1. Module code for Weaviate, written in Go, which hooks  into specific lifecycles and provides various capabilities (like controlling the API function) to integrate the module into the regular flow in Weaviate.
+
+    - Tells the Weaviate GraphQL API that the module provides a specific nearText method.
+    - Validates specific configuration and schema settings and makes them available to the APIs.
+    - Tells Weaviate how to obtain a vector (e.g. a word or image embedding) when one is necessary (by sending an HTTP request to a third-party service, in this case the Python application around the inference model)
+
+2. Inference service, typically a containerized application that wraps an ML model with a module-specific API which is consumed by the module code executed in Weaviate.
+    - Provides a service that can do model inference.
+    - Implements an API that is in contract with A (not with Weaviate itself).
+
+### Creating a custome module
 
 - Additionaly weaviate allows developers to create custome modules. 
 - If the developer comfortable with the design of the module he can start on creating the module.
@@ -223,22 +238,10 @@ which related to the result from the inference model.
   }
 ```
 
-[GitHub](https://github.com/semi-technologies/weaviate) 
-[Custome Module](https://weaviate.io/developers/contributor-guide/current/weaviate-module-system/how-to-build-a-new-module.html)
+- Refer below links for more details
 
-Typically a (vectorizer) module consists of two parts:
-
-![modules-core](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/modules-core.png)
-
-1. Module code for Weaviate, written in Go, which hooks  into specific lifecycles and provides various capabilities (like controlling the API function) to integrate the module into the regular flow in Weaviate.
-
-    - Tells the Weaviate GraphQL API that the module provides a specific nearText method.
-    - Validates specific configuration and schema settings and makes them available to the APIs.
-    - Tells Weaviate how to obtain a vector (e.g. a word or image embedding) when one is necessary (by sending an HTTP request to a third-party service, in this case the Python application around the inference model)
-
-2. Inference service, typically a containerized application that wraps an ML model with a module-specific API which is consumed by the module code executed in Weaviate.
-    - Provides a service that can do model inference.
-    - Implements an API that is in contract with A (not with Weaviate itself).
+    - [GitHub](https://github.com/semi-technologies/weaviate) 
+    - [Custome Module](https://weaviate.io/developers/contributor-guide/current/weaviate-module-system/how-to-build-a-new-module.html)
 
 
 
