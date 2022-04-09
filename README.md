@@ -72,7 +72,10 @@ Additionally Weaviate is a low-latency vector search engine with out-of-the-box 
 
 
 I ll expalin the drawback of tradition search engine by using an example in the documentation.
- - data object: { "data": "The Eiffel Tower is a wrought iron lattice tower on the Champ de Mars in Paris." }
+
+ ```json
+ { "data": "The Eiffel Tower is a wrought iron lattice tower on the Champ de Mars in Paris." }
+ ```
  
  Storing this in a traditional search engine might leverage inverted indices to index the data. This means that to retrieve the data; you need to search for “Eiffel Tower” or “wrought iron lattice”, etc. to find it. But what if you have vast amounts of data and you want the document about the Eiffel Tower but you search for: “landmarks in France”? Traditional search engines can’t help you there and this is where vector search engines show their superiority.
 
