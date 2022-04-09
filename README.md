@@ -130,7 +130,7 @@ Typically a (vectorizer) module consists of two parts:
 ### Creating a custome module
 
 - Additionaly weaviate allows developers to create custome modules. 
-- If the developer comfortable with the design of the module he can start on creating the module.
+- If the developer comfortable with golang and vector seach engines and with the design of the module, he can start on creating the module.
 - In order to design a proper module schema developer should have an idea about the inference model that he use and accordingly have to add additional arguments to the module design.
 
 - Example Design related to Token classification module
@@ -241,7 +241,7 @@ which related to the result from the inference model.
   }
 ```
 
-- Refer below links for more details
+- Refer below links for more details relatd to building custome module.
 
     - [GitHub](https://github.com/semi-technologies/weaviate) 
     - [Custome Module](https://weaviate.io/developers/contributor-guide/current/weaviate-module-system/how-to-build-a-new-module.html)
