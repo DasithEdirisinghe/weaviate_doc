@@ -19,7 +19,7 @@ Summary of todays article
 
 ## What is a Keyword-based searching
 
-The most straight forward way of searching is keyword-based searching. What it does is matching the query with the keywords which already have and output the best result. But this approach is fragile as there are multiple way of describing the same data object. Other drawback of this approach is the **polysemy** which means that the same word can mean multiple things.
+The most straight forward way of searching is keyword-based searching. What it does is matching the query with the keywords which already have and output the best result. But this approach is fragile as there are multiple way of describing the same data object. Another drawback of this approach is the **polysemy** which means that the same word can mean multiple things.
 
 Back in 2015 tech giant Google launched **RankBrain** which combines AI to bring a revolution in keyword-based search. 
 
@@ -82,7 +82,7 @@ Additionally Weaviate is a low-latency vector search engine with out-of-the-box 
 ![weaviate](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/weaviate.png)
 
 
-I ll expalin the drawback of tradition search engine by using an example in the documentation.
+I ll expalin the drawback of the tradition search engine by using an example in the documentation.
 
  ```json
  { "data": "The Eiffel Tower is a wrought iron lattice tower on the Champ de Mars in Paris." }
@@ -113,7 +113,14 @@ I ll expalin the drawback of tradition search engine by using an example in the 
 
 ![Higle-level Architecture](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/high-level-weaviate.png)
 
-Refer [this](https://weaviate.io/developers/weaviate/current/architecture/index.html) for more details regarding the architecture.
+Refer [this](https://weaviate.io/developers/weaviate/current/architecture/index.html) for more details regarding the architecture. You could find information related to,
+- How weaviate store data
+- How an inverted index, a vector index and an object store interact with each other
+- Learn how combining an HNSW with an inverted index
+- ways to scale weaviate
+- planning the resources
+- Weaviate Modules
+- Role of REST and GraphQL APIs,  etc.
 
 I ll walk through the weaviate modules which enables additional functionalities to the vector native database.
 
