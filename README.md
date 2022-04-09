@@ -62,7 +62,9 @@ How Weaviate comes into the picture?
 
 ### Weaviate
 
-Weaviate is a vector search engine and vector database. Weaviate uses machine learning to vectorize and store data, and to find answers to natural language queries. With Weaviate you can also bring your custom ML models to production scale. (Intro from the [documentation](https://weaviate.io/developers/weaviate/current/))
+Weaviate is a vector search engine and vector database. Weaviate uses machine learning to vectorize and store data, and to find answers to natural language queries. With Weaviate you can also bring your custom ML models to production scale. 
+
+Additionally Weaviate is a low-latency vector search engine with out-of-the-box support for different media types (text, images, etc.). It offers Semantic Search, Question-Answer Extraction, Classification, Customizable Models (PyTorch/TensorFlow/Keras), and more. Built from scratch in Go, Weaviate stores both objects and vectors, allowing for combining vector search with structured filtering and the fault-tolerance of a cloud-native database, all accessible through GraphQL, REST, and various programming language clients. (Intro from the [documentation](https://weaviate.io/developers/weaviate/current/))
 
 - 80% of the data are unstructured and hence it is difficult to search and classify data. So adding context and meaning to the data is important. Weaviate focuses on this issue and build a production grade, cloud native, AI based sementic search engine (or vector search engine | neural search engine). 
 
