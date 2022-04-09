@@ -2,6 +2,8 @@
 ## Weaviate
 An Open Source Neural Search Engine & A Vector DataBase
 
+![Weaviate](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/weaviate-cover.png)
+
 <br>
 
 Before dive into the neural search engines, will look in to regular **keyword-based searching**
@@ -90,7 +92,8 @@ I ll expalin the drawback of tradition search engine by using an example in the 
 
  ![vector space](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/vectorSpace.png)
 
- Weaviate uses pretrained text2vec model to vectorize the data
+ 
+ - Weaviate uses pretrained text2vec model to vectorize the data (ex: fasttext)
 
 
 
