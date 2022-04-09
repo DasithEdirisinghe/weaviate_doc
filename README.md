@@ -260,7 +260,7 @@ which related to the result from the inference model.
   }
 ```
 
-- Refer below links for more details relatd to building custome module.
+- Refer below links for more details related to building custom module.
 
     - [GitHub](https://github.com/semi-technologies/weaviate) 
     - [Custome Module](https://weaviate.io/developers/contributor-guide/current/weaviate-module-system/how-to-build-a-new-module.html)
