@@ -16,6 +16,7 @@ Summary of todays article
 - Intro to Weaviate; Vector Search Engine
 - Weaviate architecture
 - Weavite Modules and Custome Modules
+- Use cases of weaviate
 
 ## What is a Keyword-based searching
 
@@ -264,5 +265,11 @@ which related to the result from the inference model.
     - [GitHub](https://github.com/semi-technologies/weaviate) 
     - [Custome Module](https://weaviate.io/developers/contributor-guide/current/weaviate-module-system/how-to-build-a-new-module.html)
 
+
+### Use cases of weaviate
+
+- Currently weaviate support below use cases
+
+![usecase](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/weaviate-usecase.png)
 
 
