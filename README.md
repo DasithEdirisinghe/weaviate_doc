@@ -18,9 +18,9 @@ Summary of todays article
 - Weavite Modules and Custome Modules
 - Use cases of weaviate
 
-## What is a Keyword-based searching
+## What is Keyword-based searching
 
-The most straight forward way of searching is keyword-based searching. What it does is matching the query with the keywords which already have and output the best result. But this approach is fragile as there are multiple way of describing the same data object. Another drawback of this approach is the **polysemy** which means that the same word can mean multiple things.
+The most straight forward way of searching is keyword-based searching. What it does is matching the query with the keywords which already have and output the best result. But this approach is fragile as there are multiple way of describing the same data object. Another drawback of this approach is the **polysemy** which means that the same word can have multiple meanings.
 
 Back in 2015 tech giant Google launched **RankBrain** which combines AI to bring a revolution in keyword-based search. 
 
