@@ -113,7 +113,7 @@ Additionaly weaviate allows developers to create custome modules.
 
 Typically a (vectorizer) module consists of two parts:
 
-![modules-core]()
+![modules-core](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/modules-core.png)
 
 1. Module code for Weaviate, written in Go, which hooks  into specific lifecycles and provides various capabilities (like controlling the API function) to integrate the module into the regular flow in Weaviate.
 
