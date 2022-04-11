@@ -1,6 +1,6 @@
 
 # Weaviate
-### An Open Source Neural Search Engine & A Vector Database
+### An Open Source Neural Search Engine & a Vector Database
 
 ![Weaviate](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/weaviate-cover.png)
 
@@ -14,7 +14,7 @@ Summary of todays article
 - What is keyword-based searching 
 - What is Neural Searching
 - Intro to Weaviate; Vector Search Engine
-- Weaviate architecture
+- Weaviate Architecture
 - Weavite Modules and Custome Modules
 - Use cases of weaviate
 
@@ -123,12 +123,22 @@ Refer [this](https://weaviate.io/developers/weaviate/current/architecture/index.
 - Weaviate Modules
 - Role of REST and GraphQL APIs,  etc.
 
-I ll walk through the weaviate modules which enables additional functionalities to the vector native database.
+
+### Weaviate Schema
+
+- In order to store data and retrieve them, weaviate uses  data schema which defines the blueprint of how data are stored.  It consists of classes and properties definitions and how they are related to each other. Due to Weaviate’s vectorization modules, the classes and properties you add will be automatically placed in context. [read more](https://weaviate.io/developers/weaviate/current/data-schema/schema-configuration.html)
+- Once weaviate instance is started( Weaviate instance running with the text2vec-contextionary module ), using a weaviate client we can create a schema. 
+- After that data can  be imported to schema thorugh weaviate client.
+- Then using GraphQL query, we can retrieve the data.
+
+Next I ll walk through the weaviate modules which enables additional functionalities to the vector native database.
 
 ### Modules
 
 Weaviate is completely modularized. The functionality of the vector native databse can be enhanced by these modules. There are mainly two types of modules.
 1. Dense Retrievers  - These modules vectorize the data. Which means transform the data into vectors. (ex: text2vec-contextionary, text2vec-transformers, text2vec-openai, multi2vec-clip )
+ 	- I encourage you to go through [text2vec-contextionary](https://weaviate.io/developers/weaviate/current/retriever-vectorizer-modules/text2vec-contextionary.html) to understand how the real world data entities are stored in a vector space
+ 	
 2. Reader or Generator modules - These modules add additional functionality. (ex : question answering module, text summarization module). A Reader module takes the set of relevant documents that are retrieved by the Retriever module, and extracts a piece of relevant information per document.  A Generator module would, on the other hand, use language generation to generate an answer from the given document
 
 
@@ -273,6 +283,7 @@ which related to the result from the inference model.
 ![usecase](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/weaviate-usecase.png)
 
 Hope now you have a high level idea about neural search engines and weaviate. Continue on reading more article related to these technologies.
+Thank you!
 
 References:
 - https://weaviate.io/developers/weaviate/current/
