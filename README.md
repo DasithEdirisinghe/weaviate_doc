@@ -283,11 +283,15 @@ which related to the result from the inference model.
 ![usecase](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/weaviate-usecase.png)
 
 Hope now you have a high level idea about neural search engines and weaviate. Continue on reading more article related to these technologies.
+
 Thank you!
 
 References:
 - https://weaviate.io/developers/weaviate/current/
 - https://dzone.com/articles/what-is-neural-search
 - https://analyticsindiamag.com/neural-nets-transforming-the-world-of-search-engines/
+- [Advances toward ubiquitous neural information retrieval from META](https://ai.facebook.com/blog/-advances-toward-ubiquitous-neural-information-retrieval/)
 
 - https://huggingface.co/
+
+
