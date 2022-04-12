@@ -154,7 +154,6 @@ Typically a (vectorizer) module consists of two parts:
 
 2. Inference service, typically a containerized application that wraps an ML model with a module-specific API which is consumed by the module code executed in Weaviate.
     - Provides a service that can do model inference.
-    - Implements an API that is in contract with A (not with Weaviate itself).
 
 ### Creating a custom module
 
@@ -278,7 +277,7 @@ which related to the result from the inference model.
 
 ### Use cases of weaviate
 
-- Currently weaviate support below use cases
+- Weaviate is an industry-agnostic solution. So weaviate can be applied to all industries based on their use cases. Below you can see some of those use cases. 
 
 ![usecase](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/weaviate-usecase.png)
 
