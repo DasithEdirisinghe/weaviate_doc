@@ -10,17 +10,17 @@ In today’s digitalized world, search engines have become one of the most power
 <br>
 <br>
 
-Summary of todays article
+Summary of today's article
 - What is keyword-based searching 
 - What is Neural Searching
 - Intro to Weaviate; Vector Search Engine
 - Weaviate Architecture
-- Weavite Modules and Custome Modules
-- Use cases of weaviate
+- Weavite Modules and Custom Modules
+- Use cases of Weaviate
 
 ## What is Keyword-based searching
 
-The most straight forward way of searching is keyword-based searching. What it does is matching the query with the keywords which already have and output the best result. But this approach is fragile as there are multiple way of describing the same data object. Another drawback of this approach is the **polysemy** which means that the same word can have multiple meanings.
+The most straightforward way of searching is keyword-based searching. What it does is matching the query with the keywords which already have and output the best result. But this approach is fragile as there are multiple ways of describing the same data object. Another drawback of this approach is the **polysemy** which means that the same word can have multiple meanings.
 
 Back in 2015 tech giant Google launched **RankBrain** which combines AI to bring a revolution in keyword-based search. 
 
@@ -37,19 +37,20 @@ Back in 2015 tech giant Google launched **RankBrain** which combines AI to bring
 ![After Rankbrain](https://api.backlinko.com/app/uploads/2017/11/1_3_rankbrain-process-960x363.webp)
 
 So what RankBrain does,
-- Depend on the keyword, RankBrain will increase or decrease the importance of backlinks, content refreshes, domain authority etc.
+- Depending on the keyword, RankBrain will increase or decrease the importance of backlinks, content refreshes, domain authority etc.
 - Then, it looks at how Google searchers interact with the new search results. If users like the new algorithm better, it stays. If not, RankBrain rolls back the old algorithm.
 
-But since data becoming growing exponentially and people wanted to search through voice, images, videos and interact with voice assistance like siri, cortana, and alexa, engineers wanted to apply AI and Deep Learning techniques in order to achieve these use cases. Thats where the neural search comes in to the picture.
+But since data is growing exponentially and people wanted to search through voice, images, videos and interact with voice assistants like Siri, Cortana, and Alexa, engineers wanted to apply AI and Deep Learning techniques in order to achieve these use cases. That's where the neural search comes into the picture.
+
 
 ## What is Neural Search
 
-Neural Search is a new approach to retrieving information using neural networks. It uses advance techniques as below to make the search more accurate and scalable.
+Neural Search is a new approach to retrieving information using neural networks. It uses advanced techniques as below to make the search more accurate and scalable.
 - Use of word embeddings to capture semantic properties of words
 - Focus on end-to-end learning of higher-level tasks (e.g., question answering, text summarization)
 
 Applications of Neural Search are,
-- Sementic search
+- Semantic search
 - Search between data types
 - Search with multiple data types
 
@@ -78,12 +79,12 @@ Weaviate is a vector search engine and vector database. Weaviate uses machine le
 
 Additionally Weaviate is a low-latency vector search engine with out-of-the-box support for different media types (text, images, etc.). It offers Semantic Search, Question-Answer Extraction, Classification, Customizable Models (PyTorch/TensorFlow/Keras), and more. Built from scratch in Go, Weaviate stores both objects and vectors, allowing for combining vector search with structured filtering and the fault-tolerance of a cloud-native database, all accessible through GraphQL, REST, and various programming language clients. (Intro from the [documentation](https://weaviate.io/developers/weaviate/current/))
 
-- 80% of the data are unstructured. Hence it is difficult to search and classify data. So adding context and meaning to the data is important. Weaviate focuses on this issue and build a production grade, cloud native, AI based sementic search engine (or vector search engine | neural search engine). 
+- 80% of the data are unstructured. Hence it is difficult to search and classify data. So adding context and meaning to the data is important. Weaviate focuses on this issue and build a production grade, cloud native, AI based semantic search engine (or vector search engine | neural search engine). 
 
 ![weaviate](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/weaviate.png)
 
 
-I ll expalin the drawback of the tradition search engine by using an example in the documentation.
+I'll explain the drawback of the traditional search engine by using an example in the documentation.
 
  ```json
  { "data": "The Eiffel Tower is a wrought iron lattice tower on the Champ de Mars in Paris." }
@@ -96,7 +97,7 @@ I ll expalin the drawback of the tradition search engine by using an example in 
  So what is vectorization?
 
  - It also called word embedding, vector mapping, feature learning
- - Maps the data to vectors of real number.
+ - Maps the data to vectors of real numbers.
  - Data Stores in a high dimensional vector space
  - This captures the semantics and relationships between data
  - Data is automatically stored with its meaning
@@ -105,10 +106,11 @@ I ll expalin the drawback of the tradition search engine by using an example in 
  Vector Space
 
  - each data object has a corresponding vector and position in the vector space.
- - Here data has represented in a 300 long array. That means vector space is 300 dimensional.
+ - Here data is represented in a 300 long array. That means vector space is 300 dimensional.
 
  ![vector space](https://github.com/DasithEdirisinghe/weaviate_doc/blob/main/img/vectorSpace.png)
 
+<br>
  
  ### High level Architecture of Weaviate
 
@@ -126,17 +128,18 @@ Refer [this](https://weaviate.io/developers/weaviate/current/architecture/index.
 
 ### Weaviate Schema
 
-- In order to store data and retrieve them, weaviate uses  data schema which defines the blueprint of how data are stored.  It consists of classes and properties definitions and how they are related to each other. Due to Weaviate’s vectorization modules, the classes and properties you add will be automatically placed in context. [read more](https://weaviate.io/developers/weaviate/current/data-schema/schema-configuration.html)
+- In order to store data and retrieve it, weaviate uses a data schema which defines the blueprint of how data is stored.  It consists of classes and properties definitions and how they are related to each other. Due to Weaviate’s vectorization modules, the classes and properties you add will be automatically placed in context. [read more](https://weaviate.io/developers/weaviate/current/data-schema/schema-configuration.html)
 - Once weaviate instance is started( Weaviate instance running with the text2vec-contextionary module ), using a weaviate client we can create a schema. 
-- After that data can  be imported to schema thorugh weaviate client.
+- After that data can  be imported to schema through a weaviate client.
 - Then using GraphQL query, we can retrieve the data.
 
 Next I ll walk through the weaviate modules which enables additional functionalities to the vector native database.
 
+
 ### Modules
 
-Weaviate is completely modularized. The functionality of the vector native databse can be enhanced by these modules. There are mainly two types of modules.
-1. Dense Retrievers  - These modules vectorize the data. Which means transform the data into vectors. (ex: text2vec-contextionary, text2vec-transformers, text2vec-openai, multi2vec-clip )
+Weaviate is completely modularized. The functionality of the vector native database can be enhanced by these modules. There are mainly two types of modules.
+1. Dense Retrievers  - These modules vectorize the data. Which means transforming the data into vectors. (ex: text2vec-contextionary, text2vec-transformers, text2vec-openai, multi2vec-clip )
  	- I encourage you to go through [text2vec-contextionary](https://weaviate.io/developers/weaviate/current/retriever-vectorizer-modules/text2vec-contextionary.html) to understand how the real world data entities are stored in a vector space
  	
 2. Reader or Generator modules - These modules add additional functionality. (ex : question answering module, text summarization module). A Reader module takes the set of relevant documents that are retrieved by the Retriever module, and extracts a piece of relevant information per document.  A Generator module would, on the other hand, use language generation to generate an answer from the given document
@@ -157,9 +160,9 @@ Typically a (vectorizer) module consists of two parts:
 
 ### Creating a custom module
 
-- Additionaly weaviate allows developers to create custom modules. 
-- If the developer comfortable with golang, vector seach engines and with the design of the module, he can start on creating the module.
-- In order to design a proper module schema, developer should have an idea about the inference model that he would use and accordingly have to add additional arguments to the module design.
+- Additionally weaviate allows developers to create custom modules. 
+- If the developer is comfortable with golang, vector search engines and with the design of the module, he can start on creating the module.
+- In order to design a proper module schema, the developer should have an idea about the inference model that he would use and accordingly have to add additional arguments to the module design.
 
 - Example design related to Token classification module
 
@@ -222,7 +225,7 @@ Typically a (vectorizer) module consists of two parts:
 }
 ```
 
-- Additional properties which have applied for the module design are based on the result which outputs from the inference model. Here [BERT-NER](https://huggingface.co/dslim/bert-base-NER) has used as the inference model. This model returns a result as below.
+- Additional properties which have applied for the module design are based on the result which outputs from the inference model. Here [BERT-NER](https://huggingface.co/dslim/bert-base-NER) has been used as the inference model. This model returns a result as below.
 ``` javascript
 [
   {
